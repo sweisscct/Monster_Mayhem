@@ -6,6 +6,7 @@ let gameOver = false;
 function startGame() {
     currentPlayer = 0;
     players = [
+        // Only two players, can only play 10 monsters
         { name: 'Player 1', monstersLeft: 10, monsters: [] },
         { name: 'Player 2', monstersLeft: 10, monsters: [] }
     ];
@@ -34,6 +35,7 @@ function renderBoard() {
 function handleSquareClick(square) {
     const row = parseInt(square.dataset.row);
     const col = parseInt(square.dataset.col);
+    // Can only place 10 monsters
     if (players[currentPlayer].monstersLeft > 0) {
         placeMonster(row, col);
     } else {
@@ -43,6 +45,7 @@ function handleSquareClick(square) {
 
 function placeMonster(row, col) {
     const monsterTypes = ['vampire', 'werewolf', 'ghost'];
+    // We don't get to chose the monster
     const randomMonster = monsterTypes[Math.floor(Math.random() * monsterTypes.length)];
     const monster = { type: randomMonster, row, col };
     players[currentPlayer].monsters.push(monster);
@@ -57,6 +60,7 @@ function moveMonster(row, col) {
 
 function updateBoard() {
     board.querySelectorAll('.square').forEach(square => {
+        // no way to tell which colour is which monster
         square.classList.remove('vampire', 'werewolf', 'ghost');
     });
     players.forEach(player => {
@@ -69,6 +73,7 @@ function updateBoard() {
 
 function switchPlayer() {
     currentPlayer = (currentPlayer + 1) % 2;
+    // each player plays all their monsters, then the other player goes
     if (players[currentPlayer].monstersLeft === 0) {
         endTurn();
     }
