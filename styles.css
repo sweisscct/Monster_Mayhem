@@ -12,6 +12,22 @@
     background-color: white;
 }
 
+.player1 {
+    background-color: lightblue;
+}
+
+.player2 {
+    background-color: lightgreen;
+}
+
+.player3 {
+    background-color: lightcoral;
+}
+
+.player4 {
+    background-color: lightgoldenrodyellow;
+}
+
 .vampire {
     background-color: red;
 }
