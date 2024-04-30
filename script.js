@@ -84,6 +84,7 @@ function startGame() {
     ];
     gameOver = false;
     renderBoard();
+    renderLegend();
 }
 
 
@@ -106,6 +107,7 @@ function addEdgeClasses() {
     });
 }
 
+const legend = document.getElementById('legend');
 function renderLegend() {
     legend.innerHTML = '';
     const legendItems = [
