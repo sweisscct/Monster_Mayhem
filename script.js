@@ -59,7 +59,10 @@ function updateBoard() {
 }
 
 function switchPlayer() {
-    currentPlayer = (currentPlayer + 1) % 2;
+    const currentPlayerTag = document.getElementById("current-player");
+    currentPlayer = (currentPlayer + 1) % 4;
+    currentPlayerTag.innerText = `The Current Player Is:  ${currentPlayer + 1}`;
+    console.log(`${players[currentPlayer].name} has ${players[currentPlayer].monstersLeft} left`)
     if (players[currentPlayer].monstersLeft === 0) {
         endTurn();
     }
