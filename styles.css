@@ -1,0 +1,25 @@
+.board {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+    width: 500px;
+    height: 500px;
+    border: 1px solid black;
+}
+
+.square {
+    border: 1px solid black;
+    background-color: white;
+}
+
+.vampire {
+    background-color: red;
+}
+
+.werewolf {
+    background-color: green;
+}
+
+.ghost {
+    background-color: blue;
+}
