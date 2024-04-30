@@ -106,4 +106,20 @@ function addEdgeClasses() {
     });
 }
 
+function renderLegend() {
+    legend.innerHTML = '';
+    const legendItems = [
+        { type: 'Vampire', color: 'red' },
+        { type: 'Werewolf', color: 'green' },
+        { type: 'Ghost', color: 'blue' }
+    ];
+    legendItems.forEach(item => {
+        const legendItem = document.createElement('div');
+        legendItem.classList.add('legend-item');
+        legendItem.style.color = item.color;
+        legendItem.textContent = item.type;
+        legend.appendChild(legendItem);
+    });
+}
+
 // Other functions (placeMonster, moveMonster, updateBoard, switchPlayer, endTurn) remain the same
